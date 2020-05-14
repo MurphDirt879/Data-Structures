@@ -67,19 +67,39 @@ class BinarySearchTree:
     def in_order_print(self, node):
         if node.left is not None:
             self.left.in_order_print(node.left)
-        print(self.node.value)
+        print(self.value)
         if node.right is not None:
             self.right.in_order_print(node.right)
 
     # Print the value of every node, starting with the given node,
     # in an iterative breadth first traversal
+    from collections import deque
     def bft_print(self, node):
-        pass
+        queue = self.deque()
+
+        queue.append(node)
+        while len(queue) > 0:
+            current = queue.popleft()
+            print(current.value)
+            if current.left: 
+                queue.append(current.left)
+            if current.right:
+                queue.append(current.right)
 
     # Print the value of every node, starting with the given node,
     # in an iterative depth first traversal
     def dft_print(self, node):
-        pass
+        stack = []
+
+        stack.append(node)
+        while len(stack) > 0:
+            current = stack.pop()
+            print(current.value)
+            if current.left: 
+                stack.append(current.left)
+            if current.right:
+                stack.append(current.right)
+
 
     # Stretch Goals -------------------------
     # Note: Research may be required
