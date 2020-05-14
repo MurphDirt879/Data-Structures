@@ -1,5 +1,5 @@
 """
-Node class to keep track of
+Node class to keep track oasdf
 the data internal to individual nodes
 """
 class Node:
